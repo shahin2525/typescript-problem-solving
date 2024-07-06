@@ -118,4 +118,49 @@ const driver: Driver = {
 };
 
 const getCarDriverObj = getCarDriver(car, driver);
-console.log(getCarDriverObj);
+
+// problem 6
+
+const checkArrayOfNumber = (pram: unknown) => {
+  if (Array.isArray(pram)) {
+    if (pram.every((element) => typeof element === "number")) {
+      let total = 0;
+      pram.map((number) => {
+        total = total + number;
+      });
+      console.log(total);
+    }
+  } else {
+    console.error(pram);
+  }
+};
+
+// problem 7
+const findFirstOccurrence = <T>(pram: T[], pram2: T) => {
+  const index = pram.indexOf(pram2);
+  if (index) {
+    return index;
+  }
+  return -1;
+};
+
+const numbers: number[] = [1, 2, 3, 4, 5, 2, 10, 50, 71];
+
+const strings: string[] = ["apple", "banana", "cherry", "date", "guava"];
+
+const targetNumber = 71;
+
+const targetString = "guava";
+
+const indexInNumbers = findFirstOccurrence(numbers, targetNumber);
+console.log(indexInNumbers); //output:  1
+
+// const indexInStrings = findFirstOccurrence(strings, targetString);
+// console.log(indexInStrings); //output: 2
+
+// problem 8
+interface Product {
+  name: string;
+  price: number;
+  quantity: number;
+}
