@@ -153,7 +153,6 @@ const targetNumber = 71;
 const targetString = "guava";
 
 const indexInNumbers = findFirstOccurrence(numbers, targetNumber);
-console.log(indexInNumbers); //output:  1
 
 // const indexInStrings = findFirstOccurrence(strings, targetString);
 // console.log(indexInStrings); //output: 2
@@ -164,3 +163,34 @@ interface Product {
   price: number;
   quantity: number;
 }
+
+const totalCostProduct = (products: Product[]) => {
+  let totalCost = 0;
+  products.map((product) => {
+    const price = product.price;
+    const quantity = product.quantity;
+    const totalPrice = price * quantity;
+    totalCost = totalCost + totalPrice;
+  });
+  return totalCost;
+};
+
+const products: Product[] = [
+  {
+    name: "mobile",
+    price: 1000,
+    quantity: 2,
+  },
+  {
+    name: "computer",
+    price: 20000,
+    quantity: 2,
+  },
+  {
+    name: "calculator",
+    price: 4000,
+    quantity: 2,
+  },
+];
+
+const totalCost = totalCostProduct(products);
