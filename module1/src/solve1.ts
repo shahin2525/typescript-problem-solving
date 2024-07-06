@@ -90,3 +90,32 @@ const mixedData = ["one", "four"];
 const totalNumber = getTotalNumber(mixedData);
 
 // problem 5
+
+interface Car {
+  make: string;
+  model: string;
+  release: number;
+}
+interface Driver {
+  name: string;
+
+  license: number;
+}
+
+const getCarDriver = (car: Car, driver: Driver): Record<string, unknown> => {
+  const newCarDriver = { ...car, ...driver };
+  return newCarDriver;
+};
+
+const car: Car = {
+  make: "toyta",
+  model: "f505",
+  release: 2025,
+};
+const driver: Driver = {
+  name: "raki",
+  license: 120213,
+};
+
+const getCarDriverObj = getCarDriver(car, driver);
+console.log(getCarDriverObj);
